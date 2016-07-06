@@ -1,0 +1,69 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>Imenik</title>
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+  </head>
+  <body>
+    <div class="container" style="background-color:#5bc0de;">
+            <h1 style="color: white;"><center>- Imenik -</center></h1>
+    </div>
+    <div class="container fluid">
+        <table class="table table-hover table-striped" style="margin-top: 10px;">
+            <thead>
+                <tr>
+                <th>Ime</th>
+                <th>Priimek</th>
+                <th>
+                    Oddelek-
+                    <select class="select">
+                      <option value="Vsi">Vsi</option>
+                      <option value="Finance">Finance</option>
+                      <option value="Prodaja">Prodaja</option>
+                      <option value="Razvoj">Razvoj</option>
+                      <option value="Administracija">Administracija</option>
+                    </select>
+                </th>
+                <th><span data-toggle="tooltip" data-placement="top" title="Interna telefonska številka">ITŠ</span></th>
+                <th>Uredi</th>
+                <th>Zbriši</th>
+                </tr>
+            </thead>
+            <tbody>
+                <% vrstice.forEach(function(zaposleni){ %>
+                    <tr>
+                        <td><%= zaposleni.ime %></td>
+                        <td><%= zaposleni.priimek %></td>
+                        <td><%= zaposleni.oddelek %></td>
+                        <td><%= zaposleni.stevilka %></td>
+                        <td><button class="btn btn-info" value="<%= zaposleni.key %>" onclick="uredi(this)"><span class="glyphicon glyphicon-edit"></button></td>
+                        <td><button class="btn btn-info" value="<%= zaposleni.key %>" onclick="zbrisi(this)"><span class="glyphicon glyphicon-remove"></button></td>
+                    </tr>
+                <% }) %>
+            </tbody>
+        </table>
+        <footer class="container-fluid text-center" style="background-color: #f7f7f7; padding: 20px;">
+          <a href="/zaposleni/nov" class="btn btn-info" role="button"><span class="glyphicon glyphicon-plus"></span> Dodaj nov stik</a>
+        </footer>
+        
+    </div>
+    <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+    <script type="text/javascript" src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+    <script>
+        <% if(oddelek == null) var oddelek = "Vsi"; %>
+        $('.select').val("<%- oddelek %>");
+    
+        $('[data-toggle="tooltip"]').tooltip();
+        $('select').on('change', function() {
+          window.location = "/filter/" + this.value;
+        });
+        
+        function zbrisi(button){
+            window.location = '/zbrisi/'+ button.value;
+        }
+        function uredi(button) {
+            window.location = '/zaposleni/'+ button.value;
+        }
+    </script>
+  </body>
+</html>

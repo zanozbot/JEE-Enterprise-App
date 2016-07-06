@@ -1,0 +1,13 @@
+{
+  "name": "Imenik",
+  "description": "Izdelava spletne aplikacije \"Imenik\"",
+  "author": "Žan Ožbot <zan.ozbot@gmail.com>",
+  "dependencies": {
+    "express": "latest",
+    "express-session":"latest",
+    "sqlite3": "latest",
+    "ejs": "latest",
+    "formidable": "latest",
+    "util": "latest"
+  }
+}
