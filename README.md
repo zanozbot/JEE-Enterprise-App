@@ -1,5 +1,7 @@
 # Izdelava spletne aplikacije "Imenik"
 
+*Če spletna stran ni aktivna, me kontaktirajte, da zopet zaženem strežnik, saj le ta preide v stanje mirovanje če ni aktivnih povezav*
+
 ## Osnovna navodila
 "Imenik" je spletna aplikacija za interno uporabo v podjetju. Zagotavlja podatke o zaposlenih v podjetju.
 Aplikacija v datoteki (format izbereš sam) hrani naslednje podatke o zaposlenih:
