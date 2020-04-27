@@ -1,5 +1,7 @@
 # Izdelava spletne aplikacije "Imenik"
 
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+
 *Če spletna stran ni aktivna, me kontaktirajte, da zopet zaženem strežnik, saj le ta preide v stanje mirovanje če ni aktivnih povezav*
 
 ## Osnovna navodila
